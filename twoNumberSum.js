@@ -47,3 +47,37 @@ const solutionB = (array, targetSum) => {
 
   return [];
 };
+
+/**
+ *
+ * @param {Array} array
+ * @param {Number} targetSum
+ *
+ *  Time O(nlogn)
+ * Space O(1)
+ */
+const solutionC = (array, targetSum) => {
+  if (!Array.isArray(array) && !array.length) {
+    return [];
+  }
+
+  array.sort();
+
+  let leftPointer = 0;
+  let rightPointer = array.length - 1;
+
+  while (leftPointer < rightPointer) {
+    const firstNumber =  array[leftPointer];
+    const secondNumber = array[rightPointer];
+    const sum = firstNumber + secondNumber;
+    if (sum == targetSum) {
+      return [firstNumber, secondNumber];
+    } else if (sum > targetSum) {
+      rightPointer--;
+    } else {
+      leftPointer++;
+    }
+  }
+
+  return [];
+}
