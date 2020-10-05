@@ -35,3 +35,25 @@ const isPalindromeRecursion = (str, firstCharacterIndex = 0) => {
   }
   return isPalindromeRecursion(str, firstCharacterIndex + 1);
 };
+
+/**
+ *
+ * @param {Array} str
+ *
+ * Time O(n)
+ * Space O(1)
+ */
+const solutionC = (str) => {
+  let leftIndex = 0;
+  let rightIndex = str.length - 1;
+
+  while (leftIndex < rightIndex) {
+    if (str[leftIndex] !== str[rightIndex]) {
+      return false;
+    }
+    leftIndex++;
+    rightIndex--;
+  }
+
+  return true;
+};
