@@ -29,7 +29,9 @@ const isPalindromeRecursion = (str, firstCharacterIndex = 0) => {
   const lastCharacterIndex = str.length - 1 - firstCharacterIndex;
   if (firstCharacterIndex >= lastCharacterIndex) {
     return true;
-  } else {
-    return str[firstCharacterIndex] === str[lastCharacterIndex] && isPalindromeRecursion(str, firstCharacterIndex + 1);
   }
+  if (str[firstCharacterIndex] !== str[lastCharacterIndex]) {
+    return false;
+  }
+  return isPalindromeRecursion(str, firstCharacterIndex + 1);
 };
