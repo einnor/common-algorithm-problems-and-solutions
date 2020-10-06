@@ -23,3 +23,18 @@ const swapLeftAndRight = (tree) => {
   tree.right = tree.left;
   tree.left = temp;
 };
+
+/**
+ *
+ * @param {BST} tree
+ *
+ * Time O(n)
+ * Space O(d), where d is the depth of the tree. The highest number of frames in the call stack is going to amount to the depth of the tree
+ */
+const solutionB = (tree) => {
+  if (tree == null) {
+    return;
+  }
+  solutionB(tree.left);
+  solutionB(tree.right);
+};
