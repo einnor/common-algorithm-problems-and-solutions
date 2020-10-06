@@ -36,7 +36,7 @@ class BST {
 
   /**
    *
-   * @param {Bumber} value
+   * @param {Number} value
    *
    * Average: O(logn) time | O(1) space
    * Worst:  O(n) time | O(1) space
@@ -55,6 +55,14 @@ class BST {
     return false;
   };
 
+  /**
+   *
+   * @param {Number} value
+   * @param {Number} value
+   *
+   * Average: O(logn) time | O(1) space
+   * Worst:  O(n) time | O(1) space
+   */
   remove(value, parentNode = null) {
     let currentNode = this;
     while (currentNode !== null) {
@@ -102,5 +110,19 @@ class BST {
       }
     }
     return this;
+  };
+
+
+  /**
+   *
+   * Average: O(logn) time | O(1) space
+   * Worst:  O(n) time | O(1) space
+   */
+  getMinValue() {
+    let = currentNode = this;
+    while (currentNode !== null) {
+      currentNode = currentNode.left;
+    }
+    return currentNode.value;
   };
 };
