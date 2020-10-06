@@ -6,3 +6,12 @@ const inOrderTraverse = (tree, array) => {
   }
   return array;
 };
+
+const preOrderTraverse(tree, array) => {
+  if (tree !== null) {
+    array.push(tree.value);
+    preOrderTraverse(tree.left, array);
+    preOrderTraverse(tree.right, array);
+  }
+  return array;
+};
