@@ -5,6 +5,13 @@ class BST {
     this.right = null;
   };
 
+  /**
+   *
+   * @param {Number} value
+   *
+   * Average: O(logn) time | O(1) space
+   * Worst:  O(n) time | O(1) space
+   */
   insert(value) {
     let currentNode = this;
     while (true) {
