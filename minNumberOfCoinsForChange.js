@@ -7,15 +7,15 @@
  * Space O(n)
  */
 const solution = (n, denominations) => {
-  const ways = Array.from(Array(n + 1).keys()).map(() => 0);
-  ways[0] = 1;
+  const numberOfCoins = Array.from(Array(n + 1).keys()).map(() => Infinity);
+  numberOfCoins[0] = 0;
   for (const denom of denominations) {
     for (let amount = 1; amount <= n; amount++) {
       if (denom <= amount) {
-        ways[amount] = ways[amount] + ways[amount - denom];
+        numberOfCoins[amount] = Math.min(numberOfCoins[amount], 1 + numberOfCoins[amount - denom]);
       }
     }
   }
 
-  return ways[n];
+  return numberOfCoins[n] === Infinity ? -1 : numberOfCoins[n];
 };
