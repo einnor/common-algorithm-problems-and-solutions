@@ -33,4 +33,25 @@ class BST {
     }
     return this;
   };
+
+  /**
+   *
+   * @param {Bumber} value
+   *
+   * Average: O(logn) time | O(1) space
+   * Worst:  O(n) time | O(1) space
+   */
+  contains(value) {
+    let currentNode = this;
+    while (currentNode !== null) {
+      if (value < currentNode.value) {
+        currentNode = currentNode.left;
+      } else if (value > currentNode.value) {
+        currentNode = currentNode.right;
+      } else {
+        return true;
+      }
+    }
+    return false;
+  };
 };
