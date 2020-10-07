@@ -1,3 +1,11 @@
+/**
+ *
+ * @param {SinglyLinkedList} head
+ * @param {Number} n
+ *
+ * Time O(n)
+ * Space O(1)
+ */
 const solution = (head, n) => {
   let counter = 1;
   let first = head;
