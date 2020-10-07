@@ -8,6 +8,13 @@ class Node {
     this.children.push(new Node(name));
   }
 
+  /**
+   *
+   * @param {Array} array
+   *
+   * Time O(v + e)
+   * Space O(v)
+   */
   breadthFirstSearch(array) {
     const queue = [this];
     while (queue.length) {
