@@ -12,10 +12,33 @@ const solutionA = (n) => {
   let numberOfTopologies = 0;
   for (let leftTreeSize = 0; leftTreeSize < n; leftTreeSize++) {
     const rightTreeSize = n - 1 - leftTreeSize;
-    numberOfLeftTrees = solution(leftTreeSize);
-    numberOfRightTrees = solution(rightTreeSize);
+    numberOfLeftTrees = solutionA(leftTreeSize);
+    numberOfRightTrees = solutionA(rightTreeSize);
     numberOfTopologies += numberOfLeftTrees * numberOfRightTrees;
   }
+
+  return numberOfTopologies;
+};
+
+/**
+ *
+ * @param {Number} n
+ *
+ * Time O(n^2)
+ * Space O(n)
+ */
+const solutionB = (n, cache = { 0: 1 }) => {
+  if (n in cache) {
+    return cache[n];
+  }
+  let numberOfTopologies = 0;
+  for (let leftTreeSize = 0; leftTreeSize < n; leftTreeSize++) {
+    const rightTreeSize = n - 1 - leftTreeSize;
+    numberOfLeftTrees = solutionB(leftTreeSize, cache);
+    numberOfRightTrees = solutionB(rightTreeSize, cache);
+    numberOfTopologies += numberOfLeftTrees * numberOfRightTrees;
+  }
+  cache[n] = numberOfTopologies;
 
   return numberOfTopologies;
 };
