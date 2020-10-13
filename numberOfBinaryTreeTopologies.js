@@ -42,3 +42,19 @@ const solutionB = (n, cache = { 0: 1 }) => {
 
   return numberOfTopologies;
 };
+
+const solutionC = (n) => {
+  const cache = [1];
+  for (let m = 1; m <= n; m++) {
+    let numberOfTopologies = 0;
+    for (let leftTreeSize = 0; leftTreeSize < m; leftTreeSize++) {
+      const rightTreeSize = m - 1 - leftTreeSize;
+      const numberOfLeftTrees = cache[leftTreeSize];
+      const numberOfRightTrees = cache[rightTreeSize];
+      numberOfTopologies += numberOfLeftTrees * numberOfRightTrees;
+    }
+    cache.push(numberOfTopologies);
+  }
+
+  return cache[n];
+};
