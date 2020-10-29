@@ -119,7 +119,7 @@ class BST {
    * Worst:  O(n) time | O(1) space
    */
   getMinValue() {
-    let = currentNode = this;
+    let currentNode = this;
     while (currentNode !== null) {
       currentNode = currentNode.left;
     }
