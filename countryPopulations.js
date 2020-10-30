@@ -1,22 +1,6 @@
-process.stdin.resume();
-process.stdin.setEncoding('utf-8');
+import https from 'https';
 
-var https = require('https');
-var __input_stdin = "";
-var __input_stdin_array = "";
-var __input_currentline = 0;
-
-process.stdin.on('data', function (data) {
-    __input_stdin += data;
-});
-
-/*
- * Complete the function below.
- * Instead of returning the answer, log the answer to the console.
- * https://jsonmock.hackerrank.com/api/countries/search?name=
- */
-
-function getCountries(s, p) {
+const getCountries = (s, p) => {
 	let numberOfCountries = 0;
     const baseUrl = 'https://jsonmock.hackerrank.com/api/countries/search';
 
@@ -41,9 +25,9 @@ function getCountries(s, p) {
                     console.log(countriesWhichMeetPopulationCriteria.length);
                 });
         });
-}
+};
 
-function getTotalNumberOfPages(baseUrl, s) {
+const getTotalNumberOfPages = (baseUrl, s) => {
     const url = `${baseUrl}?name=${s}`;
     return new Promise((resolve, reject) => {
         https.get(url, (res) => {
@@ -57,9 +41,9 @@ function getTotalNumberOfPages(baseUrl, s) {
             })
         });
     });
-}
+};
 
-function fetchCountries(baseUrl, s, page) {
+const fetchCountries = (baseUrl, s, page) => {
      const url = `${baseUrl}?name=${s}&page=${page}`;
     return new Promise((resolve, reject) => {
         https.get(url, (res) => {
@@ -73,6 +57,4 @@ function fetchCountries(baseUrl, s, page) {
             })
         });
     });
-}
-
-process.stdin.on('end', function () {
+};
