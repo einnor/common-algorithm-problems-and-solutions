@@ -21,3 +21,24 @@ const solutionA = (grid) => {
   return count;
 };
 
+/**
+ *
+ * @param {Matrix} grid
+ *
+ * Time O(n)
+ * Space O(n)
+ */
+const solutionA = (grid) => {
+  let count = 0;
+
+  // Flatten the grid to a 1D array
+  const flatGrid = [].concat.apply([], grid);
+
+  for (num of flatGrid) {
+    if (Math.sign(grid[i][j]) === -1) {
+      count += 1;
+    }
+  }
+
+  return count;
+};
