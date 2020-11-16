@@ -47,7 +47,7 @@ const buildSequence = (array, sequences, currentIdx) => {
  * Time O(nlogn)
  * Spacce O(n)
  */
-const solutionA = (array) => {
+const solutionB = (array) => {
   const sequences = Array.from(Array(array.length).keys()).map(() => null);
   const indices = Array.from(Array(array.length + 1).keys()).map(() => null);
   let length = 0;
