@@ -1,3 +1,10 @@
+/**
+ *
+ * @param {Array} array
+ *
+ * Time O(n)
+ * Space O(1)
+ */
 const solution = (array) => {
   let minOutOfOder = Infinity;
   let maxOutOfOrder = -Infinity;
