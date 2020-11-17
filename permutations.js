@@ -24,3 +24,36 @@ const helper = (array, currentPermutation, permutations) => {
     }
   }
 };
+
+/**
+ *
+ * @param {Array} array
+ *
+ * Time O(n!n)
+ * Space O(n!n)
+ */
+const solutionB = (array) => {
+  const permutations = [];
+
+  helperB(0, array, permutations);
+
+  return permutations;
+};
+
+const helperB = (i, array, permutations) => {
+  if (i === array.length - 1) {
+    permutations.push(array);
+  } else {
+    for (let j = i; j < array.length - 1; j++) {
+      swap(array, i, j);
+      helperB(i + 1, array, permutations);
+      swap(array, i, j);
+    }
+  }
+};
+
+const swap = (array, i, j) => {
+  const temp = array[i];
+  array[i] = array[j];
+  array[j] = temp;
+};
