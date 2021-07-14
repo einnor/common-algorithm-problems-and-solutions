@@ -7,7 +7,6 @@ const solution = (S, A) => {
   while (idx !== 0) {
     message = message.concat(S[idx]);
     idx = A[idx];
-    console.log(idx);
   }
 
   return message;

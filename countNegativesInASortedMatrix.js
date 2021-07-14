@@ -28,7 +28,7 @@ const solutionA = (grid) => {
  * Time O(n)
  * Space O(n)
  */
-const solutionA = (grid) => {
+const solutionB = (grid) => {
   let count = 0;
 
   // Flatten the grid to a 1D array

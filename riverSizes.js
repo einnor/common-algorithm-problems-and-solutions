@@ -32,7 +32,7 @@ const traverseNode = (i, j, matrix, visited, sizes) => {
   while (nodesToExplore.length) {
     let currentNode = nodesToExplore.pop();
     let x = currentNode[0];
-    let y = currentNode[i];
+    let y = currentNode[1];
     if (visited[x][y]) {
       continue;
     }
